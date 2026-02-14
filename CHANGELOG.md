@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/isuvorov/examplex/compare/v0.0.2...v0.1.0) (2026-02-14)
+
+
+### Bug Fixes
+
+* CI ([f9e02c3](https://github.com/isuvorov/examplex/commit/f9e02c3e7d709e40b1d04e6c830a82116098a4a4))
+* **ci:** merge version and publish into single job ([7f0c20e](https://github.com/isuvorov/examplex/commit/7f0c20ec4bafa70a7de8aace31efacdfc9b73d1f))
+
+
+### Features
+
+* **ab:** double ([86506ea](https://github.com/isuvorov/examplex/commit/86506ea05b57c6818cafb511ca42e785e7fc21b3))
+
+
+
+
+
 ## [0.0.2](https://github.com/isuvorov/examplex/compare/v1.1.0...v0.0.2) (2026-02-14)
 
 

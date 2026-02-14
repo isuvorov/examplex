@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/isuvorov/examplex/compare/v0.0.2...v0.1.0) (2026-02-14)
+
+
+### Features
+
+* **ab:** double ([86506ea](https://github.com/isuvorov/examplex/commit/86506ea05b57c6818cafb511ca42e785e7fc21b3))
+
+
+
+
+
 ## [0.0.2](https://github.com/isuvorov/examplex/compare/v1.1.0...v0.0.2) (2026-02-14)
 
 
