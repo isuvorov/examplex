@@ -1,9 +1,11 @@
 {
   "name": "@examplex/ab",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "main": "src/index.ts",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "dependencies": {
     "@examplex/a": "workspace:*",
     "@examplex/b": "workspace:*"
