@@ -9,15 +9,41 @@ permissions:
   id-token: write
 
 jobs:
-  release:
+  version:
     runs-on: ubuntu-latest
-    # Skip release commits to avoid infinite loop
     if: "!startsWith(github.event.head_commit.message, 'chore(release):')"
+    outputs:
+      changed: ${{ steps.version.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_TOKEN || github.token }}
+
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install --frozen-lockfile
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Version
+        id: version
+        run: |
+          npx lerna version --conventional-commits --yes
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  publish:
+    needs: version
+    if: needs.version.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -31,12 +57,5 @@ jobs:
 
       - run: bun install --frozen-lockfile
 
-      - name: Configure git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Version and publish
-        run: npx lerna publish --conventional-commits --yes
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN || github.token }}
+      - name: Publish
+        run: npx lerna publish from-package --yes
