@@ -1,0 +1,8 @@
+{
+  "name": "@examplex/_",
+  "private": true,
+  "workspaces": ["libs/*"],
+  "devDependencies": {
+    "lerna": "^9.0.4"
+  }
+}

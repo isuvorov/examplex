@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "npmClient": "npm",
+  "packages": [
+    "libs/*"
+  ],
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish %s"
+    }
+  }
+}

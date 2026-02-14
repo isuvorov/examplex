@@ -1,0 +1,11 @@
+{
+  "name": "@examplex/abc",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "files": ["src"],
+  "dependencies": {
+    "@examplex/ab": "workspace:*",
+    "@examplex/c": "workspace:*"
+  }
+}
