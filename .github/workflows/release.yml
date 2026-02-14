@@ -35,8 +35,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Version
+      - name: 📦 Version
         run: npx lerna version --conventional-commits --yes
 
-      - name: Publish
+      - name: 🚀 Publish
         run: npx lerna publish from-package --yes
